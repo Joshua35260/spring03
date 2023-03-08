@@ -6,14 +6,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <span>Doctor Secret Service</span>
-        <a href="/">Sign In</a>
-    </nav>
+<header th:replace="header :: top">
+    <a th:href="@{/}">Home Page</a>
 </header>
 <ul class="doctor-list">
-    <li><a href="/doctor/?number=1&name=William%20Hartnell">Doctor 1</a></li>
+    <li><a th:href="@{/doctor/?number=1&name=William%20Hartnell}">Doctor 1</a></li>
     <li><a href="/doctor/?number=2&name=Patrick%20Troughton">Doctor 2</a></li>
     <li><a href="/doctor/?number=3&name=Jon%20Pertwee">Doctor 3</a></li>
     <li><a href="/doctor/?number=4&name=Tom%20Baker">Doctor 4</a></li>
@@ -28,13 +25,7 @@
     <li><a href="/doctor/?number=13&name=Jodie%20Whittaker">Doctor 13</a></li>
     <li><a href="/doctor/">Unknown Doctor</a></li>
 </ul>
-<footer>
-    <ul>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">TARDIS</a></li>
-    </ul>
-    <span>Copyright BBC/Terry Nation 1963</span>
+<footer th:replace="footer :: footer">
 </footer>
 </body>
 </html>
